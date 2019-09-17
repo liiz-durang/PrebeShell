@@ -2,6 +2,9 @@
 #logueo.sh
 #Permite a los usuarios del so acceder a loguearse a prebeshell.
 
+trap 'echo "No se detiene"' SIGINT
+trap 'echo "No se detiene"' SIGTSTP
+
 user=$1
 
 cut -d: -f1 /etc/passwd | grep "$user" > /dev/null

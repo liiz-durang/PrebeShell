@@ -1,5 +1,8 @@
 #!/bin/bash
 
+trap 'echo "No se detiene"' SIGINT
+trap 'echo "No se detiene"' SIGTSTP
+
 temp1=`mktemp -t temp.XXXXXX`
 temp2=`mktemp -t temp2.XXXXXX`
 temp3=`mktemp -t temp3.XXXXXX`
@@ -45,7 +48,7 @@ function whoseon { #Ayuda
 kdialog --title "Intro" --msgbox "==Bienvenido a la prebeplayer=="
 while [ 1 ]
 do
-	kdialog --menu "Opciones:" "1" "Navegar en la playlist" "2" "Ayuda" "3" "Display memory usage" "0" "exit" > $temp2
+	kdialog --menu "Opciones:" "1" "Navegar en la playlist" "2" "Ayuda" "0" "exit" > $temp2
 	if [ $? -eq 1 ]
 	then
 		break
@@ -58,8 +61,6 @@ do
 		diskspace ;;
 	2)
 		whoseon ;;
-	3)
-		memusage ;;
 	0)
 		break ;;
 	*)

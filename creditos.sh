@@ -2,6 +2,9 @@
 #creditos.sh
 #creditos
 
+trap 'echo "No se detiene"' SIGINT
+trap 'echo "No se detiene"' SIGTSTP
+
 source colores.sh 
 
 echo -e "${azul}\n\n                      == CREDITOS =="

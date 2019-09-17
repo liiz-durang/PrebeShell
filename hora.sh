@@ -2,6 +2,8 @@
 #prebeshell.sh
 #Muestra la hora
 
+trap 'echo "No se detiene"' SIGINT
+trap 'echo "No se detiene"' SIGTSTP
 
 source colores.sh
 

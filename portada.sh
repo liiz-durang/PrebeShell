@@ -2,6 +2,9 @@
 #Portada.sh
 #Portada de Prebeshell
 
+trap 'echo "No se detiene"' SIGINT
+trap 'echo "No se detiene"' SIGTSTP
+
 source colores.sh
 
 echo -e " ${anaranjado}                  _______________________________   "

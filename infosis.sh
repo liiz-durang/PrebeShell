@@ -2,7 +2,8 @@
 #infosis.sh
 #info del sistema 
 
-
+trap 'echo "No se detiene"' SIGINT
+trap 'echo "No se detiene"' SIGTSTP
 
 source colores.sh  
 

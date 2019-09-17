@@ -2,6 +2,9 @@
 #prebeshell.sh
 #Muestra archivos en una ruta
 
+trap 'echo "No se detiene"' SIGINT
+trap 'echo "No se detiene"' SIGTSTP
+
 original=$PWD
 
 function treee1 {
@@ -31,6 +34,7 @@ do
 	then 
 		echo "$archivo" | sed -e 's;[^/]*/;|-->;g;' -e 's/-->|/ |/g'
 		cd "$archivo"
+		treee1
 	fi
 done
 }

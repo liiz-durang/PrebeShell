@@ -5,6 +5,10 @@
 source colores.sh 
 clear 
 
+
+trap 'echo "No se detiene"' SIGINT
+trap 'echo "No se detiene"' SIGTSTP
+
 echo -e "${azul}                               ......               "
 echo -e "                            .:||||||||:.            "
 echo -e "                           /            \           "
